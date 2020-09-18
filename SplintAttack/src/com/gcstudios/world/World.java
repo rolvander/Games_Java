@@ -76,6 +76,9 @@ public class World {
 		Game.player.pontos = 0;
 		UI.minutes = 0;
 		UI.seconds = 0;
+		PackGenerator.timeA = 0;
+		PackGenerator.timeL = 0;
+		PackGenerator.timeS = 0;
 		Game.spritesheet = new Spritesheet("/spritesheet.png");
 		Game.entities = new ArrayList<Entity>();
 		Game.bullets = new ArrayList<BulletShoot>();

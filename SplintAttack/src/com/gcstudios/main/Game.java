@@ -38,6 +38,7 @@ import com.gcstudios.graficos.Spritesheet;
 import com.gcstudios.graficos.UI;
 import com.gcstudios.world.EnemyGenerator;
 import com.gcstudios.world.PackGenerator;
+import com.gcstudios.world.World;
 
 public class Game extends Canvas implements Runnable, KeyListener, MouseListener, MouseMotionListener {
 	// VARIAVEIS
@@ -87,7 +88,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 	// ESTILO DE FONTE
 	public static InputStream stream = ClassLoader.getSystemClassLoader().getResourceAsStream("pixelmix.ttf");
 	public static InputStream stream2 = ClassLoader.getSystemClassLoader().getResourceAsStream("pixel.ttf");
-	public static InputStream stream12 = ClassLoader.getSystemClassLoader().getResourceAsStream("pixelmix.ttf");
+	public static InputStream stream12 = ClassLoader.getSystemClassLoader().getResourceAsStream("pixelmix_bold.ttf");
 	public static InputStream stream3 = ClassLoader.getSystemClassLoader().getResourceAsStream("time.ttf");
 	public static InputStream stream4 = ClassLoader.getSystemClassLoader().getResourceAsStream("seven.ttf");
 	public static InputStream stream5 = ClassLoader.getSystemClassLoader().getResourceAsStream("texto.ttf");
@@ -117,7 +118,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 
 		try {// FONTES
 			newfont1 = Font.createFont(Font.TRUETYPE_FONT, stream).deriveFont(20f);
-			newfont12 = Font.createFont(Font.TRUETYPE_FONT, stream12).deriveFont(16f);
+			newfont12 = Font.createFont(Font.TRUETYPE_FONT, stream12).deriveFont(40f);
 			newfont2 = Font.createFont(Font.TRUETYPE_FONT, stream2).deriveFont(40f);
 			fonttime = Font.createFont(Font.TRUETYPE_FONT, stream3).deriveFont(40f);
 			seven = Font.createFont(Font.TRUETYPE_FONT, stream4).deriveFont(50f);
@@ -186,6 +187,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 	}
 
 	public void tick() {
+		//System.out.println(gamestate);
 		// ESTADO DO JOGO
 		if (gamestate == "NORMAL") {
 			Sound.theme.loop();
@@ -307,19 +309,18 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 		// CUTSCENE RENDER
 		if (estado_cena == comecar1) {
 			if (timecena1 >= 0 && timecena1 <= 80) {
-
+				g.setFont(newfont12);
 				g.setColor(new Color(0, 0, 50));
-				g.setFont(seven);
-				g.drawString("LEVEL " + levelGame, 120, 240);
+				g.drawString("LEVEL " + levelGame, 110, 240);
 
 			} else if (timecena1 > 80 && timecena1 <= 160) {
+				g.setFont(newfont12);
 				g.setColor(new Color(0, 0, 50));
-				g.setFont(seven);
-				g.drawString("READY!", 126, 240);
+				g.drawString("READY!", 125, 240);
 
 			} else if (timecena1 > 160 && timecena1 < 239) {
+				g.setFont(newfont12);
 				g.setColor(new Color(0, 0, 50));
-				g.setFont(seven);
 				g.drawString("GO!", 170, 240);
 			}
 		}
@@ -389,6 +390,9 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 
 		if (e.getKeyCode() == KeyEvent.VK_X) {
 			player.fire = true;
+			if (Game.player.pedras <= 0) {
+				Sound.noammopedra.play();
+			}
 
 		}
 		if (e.getKeyCode() == KeyEvent.VK_Z) {
@@ -401,7 +405,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 		if (gamestate == "MENU") {
 			if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 				menu.enter = true;
-
+				
 			}
 		}
 
@@ -413,9 +417,16 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 			}
 		}
 
-		if (gamestate == "GAMEOVER" || gamestate == "WIN") {
+		if (gamestate == "WIN") {
 			if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 				Game.gamestate = "MENU";
+			}
+		}
+		
+		if (gamestate == "GAMEOVER") {
+			if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+				World.restartGame();
+				return;
 			}
 		}
 

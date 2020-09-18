@@ -71,7 +71,7 @@ public class UI {
 
 			if (timecena > 0 && timecena < 58) {
 				g.setColor(new Color(0, 0, 50));
-				g.setFont(Game.seven);
+				g.setFont(Game.newfont12);
 				g.drawString("LEVEL " + Game.levelGame, 120, 240);
 				if (timecena == 10) {
 					Sound.levelup.play();
@@ -87,7 +87,7 @@ public class UI {
 
 			if (timecena2 > 0 && timecena2 <= 60) {
 				g.setColor(new Color(0, 0, 50));
-				g.setFont(Game.seven);
+				g.setFont(Game.newfont12);
 				g.drawString("LEVEL " + Game.levelGame, 120, 240);
 				if (timecena2 == 10) {
 					Sound.levelup.play();
@@ -101,7 +101,7 @@ public class UI {
 			timecena3++;
 			if (timecena3 > 0 && timecena3 <= 60) {
 				g.setColor(new Color(0, 0, 50));
-				g.setFont(Game.seven);
+				g.setFont(Game.newfont12);
 				g.drawString("LEVEL " + Game.levelGame, 120, 240);
 				if (timecena3 == 10) {
 					Sound.levelup.play();
@@ -149,19 +149,19 @@ public class UI {
 
 		// GAME OVER
 		if (Game.gamestate == "GAMEOVER") {
-			Sound.gameover.loop();
+			
 			Graphics2D g2 = (Graphics2D) g;
 			g2.setColor(new Color(0, 0, 20, 250));
 			g.fillRect(0, 0, Game.WIDTH * Game.SCALE, Game.HEIGHT * Game.SCALE);
 			g.setColor(new Color(255, 255, 255));
-			g.setFont(Game.algebrian);
-			g.drawString("gameover", 24, 200);
+			g.setFont(Game.newfont12);
+			g.drawString("GAMEOVER", 80, 250);
 
 			frames++;
 			if (frames > maxframes) {
 				g.setColor(new Color(255, 255, 255));
 				g.setFont(Game.fonttime);
-				g.drawString("> Pressione ENTER para ir ao MENU! <", 15, 350);
+				g.drawString("> Pressione ENTER para REINICIAR! <", 15, 450);
 				frames = 0;
 			}
 
@@ -173,8 +173,8 @@ public class UI {
 			g2.setColor(new Color(0, 0, 20, 250));
 			g.fillRect(0, 0, Game.WIDTH * Game.SCALE, Game.HEIGHT * Game.SCALE);
 			g.setColor(new Color(255, 255, 255));
-			g.setFont(Game.algebrian);
-			g.drawString("winner!", 54, 200);
+			g.setFont(Game.newfont12);
+			g.drawString("WINNER!", 100, 200);
 			g.setColor(new Color(255, 255, 255));
 			
 			g.setColor(new Color(255, 255, 55));
@@ -184,7 +184,7 @@ public class UI {
 			
 			g.setColor(new Color(255, 255, 255));
 			g.setFont(Game.fonttime);
-			g.drawString("> Tecle ENTER para reiniciar! <", 50, 500);
+			g.drawString("> Tecle ENTER para ir ao MENU! <", 35, 500);
 
 		}
 	}

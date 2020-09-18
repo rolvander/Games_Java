@@ -83,8 +83,12 @@ public class Bird extends Entity {
 			Sound.low.play();
 		}
 
-		if (lifeBird <= 0) {	
+		if (lifeBird <= 0) {
 			Game.gamestate = "GAMEOVER";
+			lifeBird = 0;
+			if(lifeBird == 0) {
+				Sound.gameover.play();
+			}
 			return;
 		}
 

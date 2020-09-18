@@ -28,10 +28,10 @@ public class Enemy2 extends Entity{
 		
 		followPath(path);
 		if(x >= Game.WIDTH) {//PLAYER PERDENDO VIDA
-			//System.out.println("Perdemos vida");
+			
 			Game.life-=Entity.rand.nextDouble();
 			Game.entities.remove(this);
-			//System.out.println("Removido");
+			Sound.damage.play();
 			return;
 		}
 		

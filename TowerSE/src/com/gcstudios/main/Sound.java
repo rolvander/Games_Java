@@ -56,6 +56,7 @@ public class Sound {
 	public static final Clips win = load("/win.wav",1);
 	public static final Clips lose = load("/shutdown.wav",1);
 	public static final Clips soundtrack = load("/backsound.wav",1);
+	public static final Clips damage = load("/damage.wav",1);
 	
 	
 

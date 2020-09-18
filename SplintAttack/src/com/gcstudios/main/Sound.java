@@ -40,7 +40,7 @@ public class Sound {
 				return;
 
 			if (Game.gamestate == "NORMAL") {
-				clips[p].loop(4);
+				clips[p].loop(40);
 			}
 			if (Game.gamestate == "WIN") {
 				clips[p].loop(0);
@@ -73,8 +73,8 @@ public class Sound {
 	public static final Clips eagle4 = load("/eagle4.wav", 1);
 	public static final Clips life = load("/life.wav", 1);
 	public static final Clips win = load("/win.wav", 1);
-	public static final Clips gameover = load("/gameover.wav", 1);
-	public static final Clips theme = load("/themes.wav", 1);
+	public static final Clips gameover = load("/gameover2.wav", 1);
+	public static final Clips theme = load("/theme3.wav", 1);
 	public static final Clips themebaixo = load("/themeBAIXO.wav", 1);
 	public static final Clips menu = load("/menu.wav", 1);
 	public static final Clips left = load("/left.wav", 1);

@@ -20,7 +20,7 @@ public class Instrucoes {
 		
 		//TEXTO
 		g.setColor(new Color(255, 255, 255));
-		g.setFont(Game.texto);
+		g.setFont(Game.fonttime);
 		g.drawString("Defenda o PASSARO dos", 90, 95);
 		g.drawString("INIMIGOS para que ele", 90, 120);
 		g.drawString("consiga levar a comida", 90, 145);
@@ -39,7 +39,7 @@ public class Instrucoes {
 		//TECLAS
 		g.setFont(Game.newfont2);
 		g.drawString("Teclas", 140, 325);
-		g.setFont(Game.texto);
+		g.setFont(Game.fonttime);
 		g.drawString("Movimentos", 160, 360);
 		g.drawString(" Esquerda", 90, 385);
 		g.drawString(" Direita", 230, 385);
@@ -56,8 +56,8 @@ public class Instrucoes {
 
 		//SAIR
 		g.setColor(new Color(255, 255, 255));
-		g.setFont(Game.newfont12);
-		g.drawString("Voltar", 112, 546);
+		g.setFont(Game.newfont1);
+		g.drawString("Voltar", 100, 548);
 		g.drawRoundRect(200, 525, 75, 30, 12, 12);
 		g.drawImage(Entity.SETA_ESQUERDA, 240, 535, 25, 12, null);
 		

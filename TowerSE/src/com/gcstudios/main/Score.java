@@ -30,11 +30,11 @@ public class Score {
 			g.setFont(Game.pixelBold);
 			g.drawString("SCORE", 320, 270);
 			
-			if(Game.pontosTotal == 32) {
-				Game.pontosTotal = 0;
+			//if(Game.pontosTotal == 32 || Game.pontosTotal == 0) {
+				//Game.pontosTotal = 0;
 				g.setFont(Game.pixelBold);
-				g.drawString(""+Game.pontosTotal, 380, 330);
-			}
+				g.drawString(" "+Game.pontosTotal, 380, 330);
+			//}
 			g.setFont(Game.pixel);
 			g.drawString("ENTER para reiniciar", 320, 480);
 			g.setFont(Game.pixel);

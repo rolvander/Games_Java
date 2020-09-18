@@ -35,7 +35,7 @@ public class LifePack extends Entity {
 			Entity e = Game.bullets.get(i);
 			if (Entity.isColidding(this, e)) {
 				//System.out.println("COLIDINDO COM PEDRAS");
-				Game.bird.lifeBird+=30;
+				Game.bird.lifeBird+=35;
 				Sound.life.play();
 				Game.entities.remove(this);
 				Game.bullets.remove(i);

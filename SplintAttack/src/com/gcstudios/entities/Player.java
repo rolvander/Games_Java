@@ -52,13 +52,10 @@ public class Player extends Entity {
 			if (fire) {
 				fire = false;
 				Sound.pedra.play();
-				BulletShoot bullet1 = new BulletShoot(this.getX() + 4, this.getY() + 2, 3, 3, 3, null);
+				BulletShoot bullet1 = new BulletShoot(this.getX() + 4, this.getY() + 2, 3, 3, 4, null);
 				Game.bullets.add(bullet1);
 				pedras -= 1;
 
-				if (pedras <= 0) {
-					Sound.noammopedra.play();
-				}
 			}
 		}
 		// FLECHAS

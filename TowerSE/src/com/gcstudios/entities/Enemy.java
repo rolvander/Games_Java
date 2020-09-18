@@ -31,7 +31,7 @@ public class Enemy extends Entity{
 			Game.life-=Entity.rand.nextDouble();
 			System.out.println("Removido");
 			Game.entities.remove(this);
-			
+			Sound.damage.play();
 			return;
 		}
 		

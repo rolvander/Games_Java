@@ -10,15 +10,15 @@ import com.gcstudios.main.Game;
 
 public class PackGenerator {
 	
-	private int timeA = 0;
-	private int timeL = 0;
-	private int timeS = 0;
+	public static int timeA = 0;
+	public static int timeL = 0;
+	public static int timeS = 0;
 
-	private int interval1 = Entity.rand.nextInt(23 - 17) + 17;
+	private int interval1 = Entity.rand.nextInt(20 - 13) + 13;
 	private int maxTimeArrow = 60 * interval1;
-	private int interval2 = Entity.rand.nextInt(45 - 35) + 35;
+	private int interval2 = Entity.rand.nextInt(40 - 35) + 35;
 	private int maxTimeLife = 60 * interval2;
-	private int interval3 = Entity.rand.nextInt(50 - 37) + 40;
+	private int interval3 = Entity.rand.nextInt(50 - 37) + 50;
 	private int maxTimeShield = 60 * interval3;
 
 	public void tick() {
