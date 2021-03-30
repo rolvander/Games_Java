@@ -1,5 +1,5 @@
 # Games Java
-Repositório de Jogos criado junto ao curso de desenvolvimento de Games.
+*Repositório de Jogos criado junto ao curso de desenvolvimento de Games.*
 
 Jogos criados em Java e com uma interface própria, em PixelArt e com a Engine feita no curso.
 Além de jogos criados no GameMaker Studio 2.
